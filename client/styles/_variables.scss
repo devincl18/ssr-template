@@ -1,0 +1,11 @@
+$colors: (
+  black: #000,
+  white: #fff,
+  grey: #666,
+  gradient-left: #8C06CF,
+  gradient-right: #FFC170
+);
+
+@function get-color($name) {
+  @return map-get($colors, $name);
+}

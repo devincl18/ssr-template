@@ -1,0 +1,49 @@
+@mixin font-face($name, $file, $weight: normal, $style: normal, $exts: otf ttf) {
+  $src: null;
+  $formats: (
+    otf: 'opentype',
+    ttf: 'truetype',
+    woff: 'woff',
+    woff2: 'woff2'
+  );
+
+  @each $ext in $exts {
+    $format: map-get($formats, $ext);
+    $src: append($src, url('../assets/plus-jakarta-sans/#{$file}.#{$ext}') format('#{$format}'), comma);
+  }
+  @font-face {
+    font-family: quote($name);
+    font-weight: $weight;
+    font-style: $style;
+    src: $src;
+  };
+}
+
+@include font-face(
+  "PlusJakartaDisplay",
+  "PlusJakartaDisplay-Regular",
+  "normal",
+  "normal",
+  "otf"
+);
+@include font-face(
+  "PlusJakartaDisplay",
+  "PlusJakartaDisplay-Bold",
+  "bold",
+  "normal",
+  "otf"
+);
+@include font-face(
+  "PlusJakartaDisplay",
+  "PlusJakartaDisplay-Italic",
+  "normal",
+  "italic",
+  "otf"
+);
+@include font-face(
+  "PlusJakartaDisplay",
+  "PlusJakartaDisplay-Light",
+  "lighter",
+  "normal",
+  "otf"
+);

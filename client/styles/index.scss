@@ -1,0 +1,14 @@
+@import 'reset';
+@import 'variables';
+@import 'fonts';
+
+.home {
+  height: 100vh;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4rem;
+  text-align: center;
+}
